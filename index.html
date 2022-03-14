@@ -375,7 +375,7 @@
                         let word = (l1 + l2 + l3 + l4 + l5 + l6);
                         let arr = [l1, l2, l3, l4, l5, l6]
                         let truearr = trueword.split('')
-                        if (words.includes(word) || keybank.includes(word)){
+                        if (words.includes(word)){
                             for (let j = 6; j > 0; j--){
                                 let letter = eval("l" + j)
                                 if (trueword.includes(letter)){
@@ -424,7 +424,6 @@
         </script>
         <style>
             #main {
-                float: left;
                 padding-left: 50px;
                 padding-top: 80px;
             }
