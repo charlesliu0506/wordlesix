@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            OSSM USH Wordle
-        </title>
-        <link rel = "icon" href = "iconic.ico">
     </head>
     <body onload = "i01.focus()">
         <div id = "main">
@@ -341,7 +337,7 @@
                 }
                 return count;
             }
-            var trueword = words[Math.floor(Math.random()*words.length)];
+            var trueword = words[Math.floor(Math.random() * words.length)];
             for (let i = 1; i < 6; i++){
                 for (let j = 1; j < 7; j++){
                     document.getElementById("i" + i + j).disabled = true;
