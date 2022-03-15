@@ -5,21 +5,21 @@
     <body>
         <div id = "main">
             <div class = "box" id = "i01"></div><div class = "box" id = "i02"></div><div class = "box" id = "i03"></div><div class = "box" id = "i04"></div><div class = "box" id = "i05"></div><div class = "box" id = "i06"></div>
-            <br>
-            <div class = "box" id = "i11"></div><div class = "box" id = "i12"></div><div class = "box" id = "i13"></div><div class = "box" id = "i14"></div><div class = "box" id = "i15"></div><div class = "box" id = "i16"></div>
-            <br>
-            <div class = "box" id = "i21"></div><div class = "box" id = "i22"></div><div class = "box" id = "i23"></div><div class = "box" id = "i24"></div><div class = "box" id = "i25"></div><div class = "box" id = "i26"></div>
-            <br>
-            <div class = "box" id = "i31"></div><div class = "box" id = "i32"></div><div class = "box" id = "i33"></div><div class = "box" id = "i34"></div><div class = "box" id = "i35"></div><div class = "box" id = "i36"></div>
-            <br>
-            <div class = "box" id = "i41"></div><div class = "box" id = "i42"></div><div class = "box" id = "i43"></div><div class = "box" id = "i44"></div><div class = "box" id = "i45"></div><div class = "box" id = "i46"></div>
-            <br>
-            <div class = "box" id = "i51"></div><div class = "box" id = "i52"></div><div class = "box" id = "i53"></div><div class = "box" id = "i54"></div><div class = "box" id = "i55"></div><div class = "box" id = "i56"></div>
-            <br>
-            <div class = "box" id = "i61"></div><div class = "box" id = "i62"></div><div class = "box" id = "i63"></div><div class = "box" id = "i64"></div><div class = "box" id = "i65"></div><div class = "box" id = "i66"></div>
-            <br>
-            <div class = "box" id = "i71"></div><div class = "box" id = "i72"></div><div class = "box" id = "i73"></div><div class = "box" id = "i74"></div><div class = "box" id = "i75"></div><div class = "box" id = "i76"></div>
             <br><br>
+            <div class = "box" id = "i11"></div><div class = "box" id = "i12"></div><div class = "box" id = "i13"></div><div class = "box" id = "i14"></div><div class = "box" id = "i15"></div><div class = "box" id = "i16"></div>
+            <br><br>
+            <div class = "box" id = "i21"></div><div class = "box" id = "i22"></div><div class = "box" id = "i23"></div><div class = "box" id = "i24"></div><div class = "box" id = "i25"></div><div class = "box" id = "i26"></div>
+            <br><br>
+            <div class = "box" id = "i31"></div><div class = "box" id = "i32"></div><div class = "box" id = "i33"></div><div class = "box" id = "i34"></div><div class = "box" id = "i35"></div><div class = "box" id = "i36"></div>
+            <br><br>
+            <div class = "box" id = "i41"></div><div class = "box" id = "i42"></div><div class = "box" id = "i43"></div><div class = "box" id = "i44"></div><div class = "box" id = "i45"></div><div class = "box" id = "i46"></div>
+            <br><br>
+            <div class = "box" id = "i51"></div><div class = "box" id = "i52"></div><div class = "box" id = "i53"></div><div class = "box" id = "i54"></div><div class = "box" id = "i55"></div><div class = "box" id = "i56"></div>
+            <br><br>
+            <div class = "box" id = "i61"></div><div class = "box" id = "i62"></div><div class = "box" id = "i63"></div><div class = "box" id = "i64"></div><div class = "box" id = "i65"></div><div class = "box" id = "i66"></div>
+            <br><br>
+            <div class = "box" id = "i71"></div><div class = "box" id = "i72"></div><div class = "box" id = "i73"></div><div class = "box" id = "i74"></div><div class = "box" id = "i75"></div><div class = "box" id = "i76"></div>
+            <br><br><br>
         </div>
         <div id = "keyboard">
             <button type="button" id = "q" class = "kb">Q</button><button type="button" id = "w" class = "kb">W</button><button type="button" id = "e" class = "kb">E</button><button type="button" id = "r" class = "kb">R</button><button type="button" id = "t" class = "kb">T</button><button type="button" id = "y" class = "kb">Y</button><button type="button" id = "u" class = "kb">U</button><button type="button" id = "i" class = "kb">I</button><button type="button" id = "o" class = "kb">O</button><button type="button" id = "p" class = "kb">P</button><br>
@@ -331,10 +331,14 @@
             for (let i = 0; i < 26; i++){
                 let l = letters[i]
                 document.getElementById(l).addEventListener("click", function(event){
-                    document.getElementById("i" + row + letter).innerHTML = l.toUpperCase()
-                    document.getElementById("i" + row + letter).className = "vis"
                     if (letter < 6){
+                        document.getElementById("i" + row + letter).innerHTML = l.toUpperCase()
+                        document.getElementById("i" + row + letter).className = "vis"
                         letter++
+                    }
+                    else if (document.getElementById("i" + row + letter).className != "vis"){
+                        document.getElementById("i" + row + letter).innerHTML = l.toUpperCase()
+                        document.getElementById("i" + row + letter).className = "vis"
                     }
                 })
             }
@@ -400,66 +404,75 @@
         <style>
             #main {
                 align-items: center;
-                padding-left: 38px;
+                padding-left: 95px;
             }
             #desc {
                 align-items: center;
             }
             .vis {
-                font-size: 36px;
-                height: 40px;
-                width: 40px;
+                font-size: 108px;
+                height: 120px;
+                width: 120px;
                 font-family: 'Courier New', Courier, monospace;
                 text-align: center;
                 outline: 1px solid black;
                 display: inline-block;
-                border-radius: 5px;
+                border-radius: 15px;
+                margin-left: 15px;
             }
             .box {
-                font-size: 36px;
+                font-size: 108px;
+                height: 120px;
+                width: 120px;
                 color: white;
-                height: 40px;
-                width: 40px;
                 font-family: 'Courier New', Courier, monospace;
                 text-align: center;
                 outline: 1px solid black;
                 display: inline-block;
+                border-radius: 15px;
+                margin-left: 15px;
             }
             .g {
-                font-size: 36px;
-                height: 40px;
-                width: 40px;
+                font-size: 108px;
+                height: 120px;
+                width: 120px;
                 font-family: 'Courier New', Courier, monospace;
                 text-align: center;
                 outline: 1px solid black;
                 display: inline-block;
                 background-color: green;
+                border-radius: 15px;
+                margin-left: 15px;
             }
             .y {
-                font-size: 36px;
-                height: 40px;
-                width: 40px;
+                font-size: 108px;
+                height: 120px;
+                width: 120px;
                 font-family: 'Courier New', Courier, monospace;
                 text-align: center;
                 outline: 1px solid black;
                 display: inline-block;
                 background-color: yellow;
+                border-radius: 15px;
+                margin-left: 15px;
             }
             .b {
-                font-size: 36px;
-                height: 40px;
-                width: 40px;
+                font-size: 108px;
+                height: 120px;
+                width: 120px;
                 font-family: 'Courier New', Courier, monospace;
                 text-align: center;
                 outline: 1px solid black;
                 display: inline-block;
                 background-color: lightgray;
+                border-radius: 15px;
+                margin-left: 15px;
             }
             .kb {
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 27px;
-                height: 30px;
-                width: 30px;
+                font-size: 90px;
+                height: 100px;
+                width: 100px;
                 display: inline;
                 border: 1px solid black;
                 border-radius: 4px;
@@ -469,9 +482,9 @@
             }
             .gk {
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 27px;
-                height: 30px;
-                width: 30px;
+                font-size: 90px;
+                height: 100px;
+                width: 100px;
                 display: inline;
                 border: 1px solid black;
                 border-radius: 4px;
@@ -482,9 +495,9 @@
             }
             .yk {
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 27px;
-                height: 30px;
-                width: 30px;
+                font-size: 90px;
+                height: 100px;
+                width: 100px;
                 display: inline;
                 border: 1px solid black;
                 border-radius: 4px;
@@ -495,9 +508,9 @@
             }
             .bk {
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 27px;
-                height: 30px;
-                width: 30px;
+                font-size: 90px;
+                height: 100px;
+                width: 100px;
                 display: inline;
                 border: 1px solid black;
                 border-radius: 4px;
@@ -508,9 +521,9 @@
             }
             #back {
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 27px;
-                height: 30px;
-                width: 62px;
+                font-size: 90px;
+                height: 100px;
+                width: 208px;
                 display: inline;
                 border: 1px solid black;
                 border-radius: 4px;
@@ -520,9 +533,9 @@
             }
             #enter {
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 27px;
-                height: 30px;
-                width: 127px;
+                font-size: 90px;
+                height: 100px;
+                width: 406px;
                 display: inline;
                 border: 1px solid black;
                 border-radius: 4px;
@@ -535,9 +548,9 @@
                 background-color: white;
                 color: white;
                 outline: none;
-                font-size: 27px;
-                height: 30px;
-                width: 20px;
+                font-size: 90px;
+                height: 100px;
+                width: 90px;
                 display: inline-block;
                 margin-right: 2px;
                 padding-right: 5px;
